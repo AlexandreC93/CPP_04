@@ -1,59 +1,36 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/24 17:30:02 by ael-khni          #+#    #+#              #
-#    Updated: 2022/07/25 14:47:52 by ael-khni         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME		= zooBrain
+NAME		= Brain
 	
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 
-OBJDIR = .objFiles
+OBJDIR = .obj
 
-FILES		= main AAnimal Cat Dog WrongAnimal WrongCat Brain
+FILES		= Animal Cat Dog WrongCat Brain AAnimal WrongAnimal main
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= AAnimal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADER		= Animal.hpp Cat.hpp Dog.hpp AAnimal.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
-
-#Debug 
-ifeq ($(DEBUG), 1)
-   OPTS = -g
-endif
-
-.PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
-	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
+	@$(CC) $(OBJ) -o $(NAME)
+	@printf "Exec ready\n"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJDIR) $(OBJ)
-	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
+	@printf "Objs removed.\n"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+	@printf "Exec removed\n"
 
 re: fclean all
+
+.PHONY: all clean fclean re

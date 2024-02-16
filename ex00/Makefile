@@ -1,32 +1,36 @@
-NAME	= Woof
+NAME		= Woof
 	
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm -rf
+CC			= c++
+FLAGS		= -Wall -Wextra -Werror
+RM			= rm -rf
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+OBJDIR = .obj
+
+FILES		= Animal Cat Dog WrongCat WrongAnimal main
+
+SRC			= $(FILES:=.cpp)
+OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
+HEADER		= Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 
 all: $(NAME)
 
-$(NAME): 
-	@printf "$(GRAY)-Compiling $(NAME)...\n"
-	@ $(CC) $(FLAGS) Animal.cpp main.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp -o $(NAME)
-	@printf "Executable ready.\n"
+$(NAME): $(OBJ) $(HEADER)
+	@$(CC) $(OBJ) -o $(NAME)
+	@printf "Exec ready\n"
+
+$(OBJDIR)/%.o: %.cpp $(HEADER)
+	@mkdir -p $(dir $@)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
+	@$(RM) $(OBJDIR) $(OBJ)
+	@printf "Objs removed.\n"
+
+fclean: clean
 	@$(RM) $(NAME)
-	@printf "Executable removed.\n"
+	@printf "Exec removed\n"
 
-fclean:
-	@$(RM) $(NAME)
-	@printf "Executable removed.\n"
+re: fclean all
 
-re: clean all
-
-.PHONY: all clean re
+.PHONY: all clean fclean re

@@ -1,12 +1,12 @@
 #include "Animal.hpp"
 
-Animal::Animal( void ) : _type( "Animel" ) {
-    std::cout << this->_type << " constructor called" << std::endl;
+Animal::Animal( void ) : m_type( "Default" ) {
+    std::cout << this->m_type << " constructor called" << std::endl;
 }
 
-Animal::Animal( std::string type ) : _type( type )
+Animal::Animal( std::string type ) : m_type( type )
 {
-    std::cout << "Animal " << this->_type << " constructor called" << std::endl;
+    std::cout << "Animal " << this->m_type << " constructor called" << std::endl;
 }
 
 Animal::~Animal( void )
@@ -14,17 +14,17 @@ Animal::~Animal( void )
     std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal( const Animal& src )
+Animal::Animal( const Animal& og )
 {
     std::cout << "Animal copy constructor called" << std::endl;
-    *this = src;
+    *this = og;
 }
 
-Animal& Animal::operator=( const Animal& rhs )
+Animal& Animal::operator=( const Animal& copy )
 {
     std::cout << "Animal assignment operator called" << std::endl;
-    if ( this != &rhs ) {
-        this->_type = rhs._type;
+    if ( this != &copy ) {
+        this->m_type = copy.m_type;
     }
     return *this;
 }
@@ -36,5 +36,5 @@ void Animal::makeSound( void ) const
 
 std::string    Animal::getType( void ) const
 {
-    return this->_type;
+    return this->m_type;
 }

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 17:41:52 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 14:21:58 by ael-khni         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Cat.hpp"
 
 Cat::Cat( void ) : Animal("Cat") {
@@ -40,7 +28,7 @@ Cat::Cat( const Cat& src )
 
 Cat& Cat::operator=( const Cat& src )
 {
-    std::cout << "<Cat.cpp:32> Cat copy called." << std::endl;
+    std::cout << "Cat copy called." << std::endl;
     if (this != &src)
     {
         this->_type = src._type;

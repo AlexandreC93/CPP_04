@@ -2,12 +2,12 @@
 
 Cat::Cat( void ) : Animal("Cat")
 {
-    std::cout << this->_type << " constructor called" << std::endl;
+    std::cout << this->m_type << " constructor called" << std::endl;
 }
 
 Cat::~Cat( void )
 {
-    std::cout << this->_type << " destructor called" << std::endl;
+    std::cout << this->m_type << " destructor called" << std::endl;
 }
 
 void    Cat::makeSound( void ) const

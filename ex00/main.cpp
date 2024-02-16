@@ -58,7 +58,6 @@ Rules of Virtual Function:
 
 int main( void )
 {
-    std::cout << "--------------- Animal ---------------" << std::endl;
 
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
@@ -72,8 +71,6 @@ int main( void )
     delete  meta;
     delete  j;
     delete  i;
-
-    std::cout << std::endl << "------------- Wrong Animal -------------" << std::endl;
 
     const WrongAnimal *wrong = new WrongAnimal();
     const WrongAnimal *wrongCat = new WrongCat();
