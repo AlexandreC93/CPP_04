@@ -19,4 +19,4 @@ public:
 	void set_idea(unsigned int index, std::string idea);
 };
  
-#endif // BRAIN_HPP
+#endif

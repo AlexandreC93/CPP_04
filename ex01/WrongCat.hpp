@@ -14,4 +14,4 @@ public:
     void   makeSound( void ) const;
 };
 
-#endif // WRONGCAT_HPP
+#endif

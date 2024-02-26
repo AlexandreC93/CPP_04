@@ -21,4 +21,4 @@ public:
 	void print_ideas() const;
 };
 
-#endif // DOG_HPP
+#endif

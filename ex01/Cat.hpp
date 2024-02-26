@@ -20,4 +20,4 @@ public:
 	void print_ideas() const;
 };
 
-#endif // CAT_HPP
+#endif

@@ -20,4 +20,4 @@ public:
     std::string     getType( void ) const; 
 };
 
-#endif // WRONGANIMAL_HPP
+#endif
