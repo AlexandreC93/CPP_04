@@ -6,7 +6,7 @@
 class Cat : public Animal
 {
 private:
-    Brain   *_brain;
+    Brain   *m_brain;
 
 public:
     Cat( void );
@@ -16,6 +16,8 @@ public:
     Cat& operator=( const Cat& src );
 
     void   makeSound( void ) const;
+    void put_idea(std::string idea);
+	void print_ideas() const;
 };
 
 #endif // CAT_HPP

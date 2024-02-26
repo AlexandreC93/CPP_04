@@ -1,12 +1,12 @@
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal( void ) : _type( "AAnimel" ) {
-    std::cout << this->_type << " constructor called" << std::endl;
+AAnimal::AAnimal( void ) : m_type( "AAnimaaal" ) {
+    std::cout << this->m_type << " constructor called" << std::endl;
 }
 
-AAnimal::AAnimal( std::string type ) : _type( type )
+AAnimal::AAnimal( std::string type ) : m_type( type )
 {
-    std::cout << "AAnimal " << this->_type << " constructor called" << std::endl;
+    std::cout << "AAnimal " << this->m_type << " constructor called" << std::endl;
 }
 
 AAnimal::~AAnimal( void )
@@ -22,9 +22,9 @@ AAnimal::AAnimal( const AAnimal& src )
 
 AAnimal& AAnimal::operator=( const AAnimal& rhs )
 {
-    std::cout << "<AAnimal.cpp:35: AAnimal assignment operator called" << std::endl;
+    std::cout << "AAnimal assignment operator called" << std::endl;
     if ( this != &rhs ) {
-        this->_type = rhs._type;
+        this->m_type = rhs.m_type;
     }
     return *this;
 }
@@ -36,5 +36,5 @@ void AAnimal::makeSound( void ) const
 
 std::string    AAnimal::getType( void ) const
 {
-    return this->_type;
+    return this->m_type;
 }

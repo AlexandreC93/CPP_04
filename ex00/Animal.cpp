@@ -1,12 +1,12 @@
 #include "Animal.hpp"
 
 Animal::Animal( void ) : m_type( "Default" ) {
-    std::cout << this->m_type << " constructor called" << std::endl;
+    std::cout << this->m_type << " Animal constructor called" << std::endl;
 }
 
 Animal::Animal( std::string type ) : m_type( type )
 {
-    std::cout << "Animal " << this->m_type << " constructor called" << std::endl;
+    std::cout << this->m_type << " constructor called" << std::endl;
 }
 
 Animal::~Animal( void )

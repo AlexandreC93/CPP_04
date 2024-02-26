@@ -6,7 +6,7 @@
 class Dog : public Animal
 {
 private:
-    Brain   *_brain;
+    Brain   *m_brain;
 
 public:
     Dog( void );
@@ -16,6 +16,8 @@ public:
     Dog& operator=( const Dog& src );
 
     void   makeSound( void ) const;
+    void put_idea(std::string idea);
+	void print_ideas() const;
 };
 
-#endif // DOG_HPP
+#endif

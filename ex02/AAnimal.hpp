@@ -7,7 +7,7 @@
 class AAnimal
 {
 protected:
-    std::string _type;
+    std::string m_type;
 
 public:
     AAnimal( void );
@@ -37,4 +37,4 @@ public:
     std::string     getType( void ) const; 
 };
 
-#endif // AANIMAL_HPP
+#endif

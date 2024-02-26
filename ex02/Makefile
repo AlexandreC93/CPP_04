@@ -1,16 +1,16 @@
 NAME		= Brain
 	
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror
+FLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -rf
 
 OBJDIR = .obj
 
-FILES		= Animal Cat Dog WrongCat Brain AAnimal WrongAnimal main
+FILES		= AAnimal Cat Dog WrongCat Brain WrongAnimal main
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Animal.hpp Cat.hpp Dog.hpp AAnimal.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
+HEADER		= AAnimal.hpp Cat.hpp Dog.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 
 
 all: $(NAME)

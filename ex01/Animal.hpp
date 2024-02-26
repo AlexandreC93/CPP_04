@@ -7,7 +7,7 @@
 class Animal
 {
 protected:
-    std::string _type;
+    std::string m_type;
 
 public:
     Animal( void );
