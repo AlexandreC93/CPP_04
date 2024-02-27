@@ -10,6 +10,8 @@ private:
 public:
     WrongCat( void );
     ~WrongCat( void );
+	WrongCat( const WrongCat& src );
+    WrongCat& operator=( const WrongCat& src );
 
     void   makeSound( void ) const;
 };
