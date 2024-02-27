@@ -22,9 +22,7 @@ void    Dog::makeSound( void ) const
     std::cout << "Woof!" << std::endl;
 }
 
-Dog::Dog( const Dog& src ) : Animal(this->m_type)
-{
-    *this = src;
+Dog::Dog(const Dog& src) : Animal(src), m_brain(new Brain(*src.m_brain)) {
 }
 
 Dog& Dog::operator=( const Dog& src )
@@ -33,6 +31,7 @@ Dog& Dog::operator=( const Dog& src )
     if (this != &src)
     {
         this->m_type = src.m_type;
+        delete this->m_brain;
         this->m_brain = new Brain( *src.m_brain );
     }
     return *this;

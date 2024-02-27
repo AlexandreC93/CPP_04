@@ -4,7 +4,9 @@
 
 int main(void)
 {
-    // const AAnimal* meta = new AAnimal();
+    //AAnimal *animal1 = new AAnimal();
+	//AAnimal animal2 = AAnimal();
+
     const AAnimal *j = new Dog();
     const AAnimal *i = new Cat();
     const AAnimal *k(j);
@@ -18,6 +20,19 @@ int main(void)
     i->makeSound();
     delete j;
     // delete i;
+
+
+    Dog basic;
+    {
+        basic.put_idea("premiere idee");
+        basic.put_idea("deuxieme idee");
+        basic.print_ideas();
+        Dog tmp = basic;
+        tmp.print_ideas();
+        tmp.put_idea("test 1");
+        tmp.print_ideas();
+    }
+    basic.print_ideas();
 
     AAnimal *array_animals[10];
     for (int i = 0; i < 10; i++)
@@ -34,26 +49,26 @@ int main(void)
 
     Cat *cat1 = new Cat();
     Cat *cat2 = new Cat();
+    Cat *cat3 = new Cat(*cat2);
     cat1->put_idea("idea 1");
     cat1->put_idea("idea 2");
     cat2->put_idea("idea 3");
     cat2->put_idea("idea 4");
     cat1->print_ideas();
     cat2->print_ideas();
+    cat3->print_ideas();
     Dog *dog2 = new Dog();
     dog2->put_idea("different idea 1");
     dog2->put_idea("different idea 2");
     dog2->print_ideas();
-
-    delete cat1;
-    cat1 = cat2;
+    *cat1 = *cat2;
 
     cat1->print_ideas();
 
-    // delete cat2;
     delete cat1;
+    delete cat2;
+    delete cat3;
     delete dog2;
-
 
     std::cout << std::endl;
 

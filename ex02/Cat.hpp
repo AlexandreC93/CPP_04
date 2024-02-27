@@ -11,7 +11,7 @@ private:
 
 public:
     Cat( void );
-    ~Cat( void );
+    virtual ~Cat( void );
 
     Cat( const Cat& src );
     Cat& operator=( const Cat& src );
@@ -21,4 +21,4 @@ public:
 	void print_ideas() const;
 };
 
-#endif // CAT_HPP
+#endif

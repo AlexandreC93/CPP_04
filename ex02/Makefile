@@ -1,4 +1,4 @@
-NAME		= Brain
+NAME		= AAnimal
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -g

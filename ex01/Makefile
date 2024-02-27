@@ -1,7 +1,7 @@
 NAME		= Woof
 	
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror
+FLAGS		= -Wall -Wextra -Werror -g3
 RM			= rm -rf
 
 OBJDIR = .obj

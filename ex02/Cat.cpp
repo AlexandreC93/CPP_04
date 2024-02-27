@@ -22,9 +22,7 @@ void    Cat::makeSound( void ) const
     std::cout << "Meow!" << std::endl;
 }
 
-Cat::Cat( const Cat& src ) : AAnimal(this->m_type)
-{
-    *this = src;
+Cat::Cat(const Cat& src) : AAnimal(src), m_brain(new Brain(*src.m_brain)) {
 }
 
 Cat& Cat::operator=( const Cat& src )
@@ -33,11 +31,14 @@ Cat& Cat::operator=( const Cat& src )
     if (this != &src)
     {
         this->m_type = src.m_type;
+        delete this->m_brain;
         this->m_brain = new Brain( *src.m_brain );
         // this->m_brain = src.m_brain;
     }
     return *this;
 }
+
+
 
 void Cat::put_idea(std::string idea) {
 	for (int i = 0; i < 100; i++) {
