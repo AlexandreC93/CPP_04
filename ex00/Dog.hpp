@@ -10,6 +10,9 @@ private:
 public:
     Dog( void );
     ~Dog( void );
+    
+    Dog( const Dog& src );
+    Dog& operator=( const Dog& src );
 
     void   makeSound( void ) const;
 };

@@ -34,7 +34,7 @@ int main( void )
     delete  meta;
     delete k;
     // delete  j;
-    delete  i;
+    // delete  i;
 
     const WrongAnimal *wrong = new WrongAnimal();
     const WrongAnimal *wrongCat = new WrongCat();

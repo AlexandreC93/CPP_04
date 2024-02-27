@@ -29,10 +29,10 @@ AAnimal& AAnimal::operator=( const AAnimal& rhs )
     return *this;
 }
 
-void AAnimal::makeSound( void ) const
-{
-    std::cout << "AAnimal makeSound called" << std::endl;
-}
+// void AAnimal::makeSound( void ) const
+// {
+//     std::cout << "AAnimal makeSound called" << std::endl;
+// }
 
 std::string    AAnimal::getType( void ) const
 {
